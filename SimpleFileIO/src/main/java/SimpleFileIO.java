@@ -1,5 +1,10 @@
+import java.awt.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class SimpleFileIO {
     public static void main(String[] args) throws  Exception
@@ -11,6 +16,13 @@ public class SimpleFileIO {
         out.println("This is the third lin of my text");
         out.flush();
         out.close();
+
+        Scanner sc = new Scanner(new BufferedReader(new FileReader("OutFile.txt")));
+        while (sc.hasNextLine()){
+            String currentLine = sc.nextLine();
+            System.out.println(currentLine);
+        }
+        System.out.println("Thats all in my file");
     }
 }
 
